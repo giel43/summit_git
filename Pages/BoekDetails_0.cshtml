@@ -273,16 +273,16 @@
 </nav>
 </div>
 <div class="book-container">
-    <img src="@Model.Boek_lijst[1].Foto" alt="De weg naar huis" width="300" height="443">
+    <img src="@Model.Boek_lijst[0].Foto" alt="@Model.Boek_lijst[0].Titel" width="300" height="443">
     <div class="book-text">
-        <h2>@Model.Boek_lijst[1].Titel</h2>
+        <h2>@Model.Boek_lijst[0].Titel</h2>
         <p>
-            @Model.Boek_lijst[1].Inhoud_boek
+            @Model.Boek_lijst[0].Inhoud_boek
         </p>
     </div>
 </div>
 <div class="reserveer-button">
-    <a href="reserveren.html">
+    <a href="/reserveren">
         <button>Reserveer</button>
     </a>
 </div>
