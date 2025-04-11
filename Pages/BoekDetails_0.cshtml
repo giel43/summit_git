@@ -5,287 +5,96 @@
 
 <!DOCTYPE html>
 <html>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<style>
-    html, body {
-        overflow-x: hidden;
-        margin: 0;
-        padding: 0;
-        width: 100%;
-    }
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="bieb.css">
 
-    .book-container {
-        display: flex;
-        align-items: flex-start;
-        gap: 20px;
-        margin: 40px 10%;
-    }
-
-    .book-text {
-        max-width: 600px;
-    }
-
-    img {
-        width: 300px;
-        height: auto;
-    }
+</head>
 
 
-    h2 {
-        margin-top: 0;
-        font-size: 20px;
-        max-width: 400px;
-    }
+<body>
+    <div class="topnav">
+        <div class="home-button">
 
-    p {
-        font-size: 15px;
-        max-width: 600px;
-    }
-
-    h1 {
-        text-align: center;
-        font-size: 25px;
-    }
-
-
-    .topnav .home-button a {
-        float: left;
-        color: rgb(0, 0, 0);
-        font-size: 30px;
-        margin-bottom: 22px;
-    }
-
-    .topnav .search-container {
-        width: 100%;
-        margin-left: 25%;
-        font-size: 26px;
-    }
-
-    .search-container input {
-        position: relative;
-        padding: 10px;
-        font-size: 16px;
-        width: 600px;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-    }
-
-    .search-container button {
-        font-size: 20px;
-        border-color: rgb(255, 255, 255);
-    }
-
-    .aanbevolen {
-        margin-left: 120px;
-        font-size: 25px;
-    }
-
-
-    .dropdown1 {
-        position: absolute;
-        left: 64%;
-        display: inline-block;
-    }
-
-    .dropbtn {
-        background: none;
-        border: none;
-        color: rgb(0, 0, 0);
-        padding: 0;
-        font-size: 16px;
-        cursor: pointer;
-        outline: none;
-    }
-
-    .dropdown {
-        position: relative;
-        display: inline-block;
-        margin-right: 20px;
-    }
-
-    .dropdown-content {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        background-color: #f9f9f9;
-        min-width: 160px;
-        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-        z-index: 1;
-    }
-
-        .dropdown-content a {
-            color: black;
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
-        }
-
-            .dropdown-content a:hover {
-                background-color: #f1f1f1
-            }
-
-    .dropdown:hover .dropdown-content {
-        display: block;
-    }
-
-    .dropdown:hover .dropbtn {
-        background-color: hsl(0, 0%, 100%);
-    }
-
-    .lijnen {
-        width: 100%;
-        height: 20px;
-        padding: 10px;
-        border-top: 1px solid rgb(0, 0, 0);
-        border-bottom: 1px solid rgb(0, 0, 0);
-        ;
-        margin: 0;
-    }
-
-    .mijn_lijst {
-        float: right;
-        margin-right: 3%;
-    }
-
-    .btn_lijst {
-        background: none;
-        border: none;
-        color: rgb(0, 0, 0);
-        padding: 0;
-        font-size: 16px;
-        cursor: pointer;
-        outline: none;
-    }
-
-    .profiel_image {
-        position: absolute;
-        top: 0px;
-        right: 10px;
-    }
-
-        .profiel_image button {
-            background: none;
-            border: none;
-            padding: 0;
-            cursor: pointer;
-        }
-
-        .profiel_image img {
-            width: 36px;
-            height: 36px;
-            clip-path: circle(50%);
-        }
-
-    .reserveer-button {
-        display: flex;
-        justify-content: center;
-        position: absolute;
-        top: 95%;
-        right: 20%;
-    }
-
-        .reserveer-button button {
-            background-color: #ff4500;
-            color: white;
-            font-size: 18px;
-            padding: 12px 24px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background 0.3s;
-        }
-
-            .reserveer-button button:hover {
-                background-color: #cc3700;
-            }
-</style>
-
-
-<div class="topnav">
-    <div class="home-button">
-
-        <a class="active" href="Home_pagina.html"><i class="fa fa-home"></i></a>
-    </div>
-    <div class="search-container">
-        <form action="/action_page.php">
-            <input type="text" placeholder="Waar ben je naar opzoek?" name="search">
-            <div class="dropdown1">
-                <select style="font-size: 17px;" id="filter" name="Type_boek">
-                    <option value="Boeken">Boeken</option>
-                    <option value="E-Books">E-Books</option>
-                    <option value="Luisterboek">Luisterboek</option>
-                </select>
-            </div>
-            <button type="submit"><i class="fa fa-search"></i></button>
-        </form>
-    </div>
-    <div class="profiel_image">
-        <button type="submit">
-            <a href="profiel.html">
-                <img src="/images/Profiel.jpg" alt="Profielknop" />
-            </a>
-        </button>
-    </div>
-</div>
-<nav>
-    <div class="lijnen">
-        <div class="dropdown">
-            <button class="dropbtn">Categorieën▼</button>
-            <div class="dropdown-content">
-                <a href="#">Literatuur en Romans</a>
-                <a href="#">Thrillers en Spanning</a>
-                <a href="#">Non-fictie</a>
-                <a href="#">Kinderboeken</a>
-                <a href="#">Studieboeken</a>
-            </div>
+            <a class="active" href="Home_pagina.html"><i class="fa fa-home"></i></a>
         </div>
-
-        <div class="dropdown">
-            <button class="dropbtn">New▼</button>
-            <div class="dropdown-content">
-                <a href="Nieuwste_releases.html">Nieuwste releases</a>
-                <a href="#">Trending boeken</a>
-                <a href="#">Nieuwe studieboeken</a>
-                <a href="#">Nieuwe e-books</a>
-                <a href="#">Nieuwe romans</a>
-                <a href="#">Nieuwe luisterboeken</a>
-            </div>
+        <div class="search-container">
+            <form action="zoekresultaat.html">
+                <input type="text" placeholder="Waar ben je naar opzoek?" name="search">
+                <div class="dropdown1">
+                    <select style="font-size: 17px;" id="filter" name="Type_boek">
+                        <option value="Boeken">Boeken</option>
+                        <option value="E-Books">E-Books</option>
+                        <option value="Luisterboek">Luisterboek</option>
+                    </select>
+                </div>
+                <button type="submit"><i class="fa fa-search"></i></button>
+            </form>
         </div>
-
-        <div class="dropdown">
-            <button class="dropbtn">Favorieten▼</button>
-            <div class="dropdown-content">
-                <a href="Aanbevolen_boeken.html">Aanbevolen Boeken</a>
-                <a href="#">Meest gelezen</a>
-                <a href="#">Bestsellers</a>
-                <a href="#">Jouw favorieten</a>
-            </div>
+        <div class="hartje_image">
+            <button type="submit">
+                <a href="mijn_lijst.html">
+                    <img src="hartje.jpg" alt="Lijstknop">
+                </a>
+            </button>
         </div>
-        <div class="mijn_lijst">
-            <button class="btn_lijst">Mijn lijst</button>
+        <div class="profiel_image">
+            <button type="submit">
+                <a href="profiel.html">
+                    <img src="Profiel.jpg" alt="Profielknop" />
+                </a>
+            </button>
+        </div>
+    </div>
+    <nav>
+        <div class="lijnen">
+            <div class="dropdown">
+                <button class="dropbtn">Categorieën▼</button>
+                <div class="dropdown-content">
+                    <a href="#">Literatuur en Romans</a>
+                    <a href="#">Thrillers en Spanning</a>
+                    <a href="#">Non-fictie</a>
+                    <a href="#">Kinderboeken</a>
+                    <a href="#">Studieboeken</a>
+                </div>
+            </div>
+
+            <div class="dropdown">
+                <button class="dropbtn">New▼</button>
+                <div class="dropdown-content">
+                    <a href="Nieuwste_releases.html">Nieuwste releases</a>
+                    <a href="#">Trending boeken</a>
+                    <a href="#">Nieuwe studieboeken</a>
+                    <a href="#">Nieuwe e-books</a>
+                    <a href="#">Nieuwe romans</a>
+                    <a href="#">Nieuwe luisterboeken</a>
+                </div>
+            </div>
+            <div class="contact">
+                <button class="btn_contact">Contact</button>
+
+            </div>
 
         </div>
 
+    </nav>
+    </div>
+    <div class="book-container">
+        <img src="@Model.Boek_lijst[0].Foto" alt="@Model.Boek_lijst[0].Titel" width="300" height="443">
+        <div class="book-text">
+            <h2>@Model.Boek_lijst[0].Titel</h2>
+            <p>
+                @Model.Boek_lijst[0].Inhoud_boek
+            </p>
+        </div>
+    </div>
+    <div class="reserveer-button">
+        <a href="/reserveren">
+            <button>Reserveer</button>
+        </a>
     </div>
 
-</nav>
-</div>
-<div class="book-container">
-    <img src="@Model.Boek_lijst[0].Foto" alt="@Model.Boek_lijst[0].Titel" width="300" height="443">
-    <div class="book-text">
-        <h2>@Model.Boek_lijst[0].Titel</h2>
-        <p>
-            @Model.Boek_lijst[0].Inhoud_boek
-        </p>
-    </div>
-</div>
-<div class="reserveer-button">
-    <a href="/reserveren">
-        <button>Reserveer</button>
-    </a>
-</div>
 
 
 

@@ -1,0 +1,120 @@
+﻿@page
+@model RazorApp.Pages.Zoek_resultaatModel
+@{
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="bieb.css">
+
+</head>
+
+
+<body>
+    <div class="topnav">
+        <div class="home-button">
+
+            <a class="active" href="Home_pagina.html"><i class="fa fa-home"></i></a>
+        </div>
+        <div class="search-container">
+            <form action="zoekresultaat.html">
+                <input type="text" placeholder="Waar ben je naar opzoek?" name="search">
+                <div class="dropdown1">
+                    <select style="font-size: 17px;" id="filter" name="Type_boek">
+                        <option value="Boeken">Boeken</option>
+                        <option value="E-Books">E-Books</option>
+                        <option value="Luisterboek">Luisterboek</option>
+                    </select>
+                </div>
+                <button type="submit"><i class="fa fa-search"></i></button>
+            </form>
+        </div>
+        <div class="hartje_image">
+            <button type="submit">
+                <a href="mijn_lijst.html">
+                    <img src="hartje.jpg" alt="Lijstknop">
+                </a>
+            </button>
+        </div>
+        <div class="profiel_image">
+            <button type="submit">
+                <a href="profiel.html">
+                    <img src="Profiel.jpg" alt="Profielknop" />
+                </a>
+            </button>
+        </div>
+    </div>
+    <nav>
+        <div class="lijnen">
+            <div class="dropdown">
+                <button class="dropbtn">Categorieën▼</button>
+                <div class="dropdown-content">
+                    <a href="#">Literatuur en Romans</a>
+                    <a href="#">Thrillers en Spanning</a>
+                    <a href="#">Non-fictie</a>
+                    <a href="#">Kinderboeken</a>
+                    <a href="#">Studieboeken</a>
+                </div>
+            </div>
+
+            <div class="dropdown">
+                <button class="dropbtn">New▼</button>
+                <div class="dropdown-content">
+                    <a href="Nieuwste_releases.html">Nieuwste releases</a>
+                    <a href="#">Trending boeken</a>
+                    <a href="#">Nieuwe studieboeken</a>
+                    <a href="#">Nieuwe e-books</a>
+                    <a href="#">Nieuwe romans</a>
+                    <a href="#">Nieuwe luisterboeken</a>
+                </div>
+            </div>
+            <div class="contact">
+                <button class="btn_contact">Contact</button>
+
+            </div>
+
+        </div>
+
+    </nav>
+    </div>
+    <h1>Zoekresultaten:</h1>
+    <div class="book_zoek_resultaat">
+        <a href="Boek_selecteer.html"><img src="Nieuwste_1.jpg" alt="De weg naar huis" width="300" height="443"></a>
+        <div class="tekst_resultaat">
+            <h2>De weg naar huis - Kristin Hannah</h2>
+            <p>
+                Van de bestsellerauteur van Aan het einde van de wereld, Als de wolven huilen en De vergeten vrouwen
+
+                ‘Hartverwarmend maar soms ook rauw verhaal verteld vanuit verschillende perspectieven.' TrosKompas
+
+                Net op het moment dat haar huwelijk op de klippen dreigt te lopen krijgt Jolene, een helikopterpiloot bij de Nationale Garde van het Amerikaanse leger, bericht dat ze uitgezonden wordt. Ze moet haar twee dochters en onder spanning staande huwelijk achterlaten en vertrekt voor een jaar naar Irak.
+
+                Haar man Michael, die al weinig begrip had voor Jolenes toewijding aan het leger, blijft achter en moet als drukbezette advocaat de zorg dragen voor de kinderen. Een zaak waarbij hij een ex-militair met PTSS moet verdedigen zorgt langzaam voor meer begrip bij Michael en hij ziet in dat hij zijn rol als echtgenoot en vader lange tijd heeft verwaarloosd.
+
+                Wanneer Jolenes helikopter neerstort tijdens een missie keert ze eerder dan gepland terug bij haar gezin. Ze moet haar draai weer vinden in het gezinsleven terwijl ze probeert te herstellen van wat ze heeft meegemaakt. Lukt het Michael om Jolenes vertrouwen terug te winnen en haar te helpen met het verwerken van de gebeurtenissen in Irak?
+            </p>
+        </div>
+    </div>
+    <div class="book_zoek_resultaat">
+        <img src="boek3.jpg" alt="Somehow, I Manage" width="300" height="443">
+        <div class="tekst_resultaat">
+            <h2>Somehow, I Manage - Michael Scott (Engels)</h2>
+            <p>Finally, Michael Scott has published his long-awaited management manuscript from the hit NBC television show, The Office. Somehow, I Manage is jam-packed with quotes of wisdom from the World's Best Boss, Michael Scott. From conflict resolution to the art of dating your boss, Somehow, I Manage is the culmination of decades worth of sage advice from his experiences in the business world. It's the perfect read for any The Office fan!</p>
+        </div>
+    </div>
+    <div class="book_zoek_resultaat">
+        <img src="boek4.jpg" alt="In Orbit" width="300" height="443">
+        <div class="tekst_resultaat">
+            <h2>In Orbit - Samantha Harvey</h2>
+            <p>
+                WINNAAR BOOKER PRIZE 2024
+                <br><br>Een team astronauten verzamelt in een internationaal ruimtestation meteorologische gegevens en voert er wetenschappelijke experimenten uit. Maar meestal observeren ze. Gezamenlijk kijken ze naar de stille blauwe planeet, ze cirkelen eromheen, draaien langs continenten en door de seizoenen, ze zien gletsjers en woestijnen, de toppen van bergen en de deining van oceanen.
+                <br><br>Hoewel ze van de wereld afgescheiden zijn, kunnen ze toch niet ontsnappen aan de constante aantrekkingskracht van de aarde. Ze ontvangen het nieuws dat de moeder van een van hen is overleden en daarmee komen de gedachten op over een terugkeer naar huis. Ze kijken toe hoe een tyfoon zich samenpakt boven de mensen van wie ze houden, en zijn vol ontzag en angst. De kwetsbaarheid van het menselijk leven vult hun gesprekken, hun angsten en hun dromen. Zo ver van de aarde hebben ze zich nog nooit zo’n onderdeel ervan gevoeld.
+            </p>
+        </div>
+    </div>
+
+</body>
+</html>

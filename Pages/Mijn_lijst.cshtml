@@ -1,8 +1,7 @@
 ﻿@page
-@model IndexModel
+@model RazorApp.Pages.Mijn_lijstModel
 @{
 }
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -80,28 +79,25 @@
 
     </nav>
     </div>
-    <h1>Iets voor jouw?</h1>
+    <div style="margin-left: 18%;"><h1>❤️ Mijn Lijst</h1></div>
     <div class="book_zoek_resultaat">
-        <a href="/BoekDetails_0"><img src="@Model.Boek_lijst[0].Foto" alt="@Model.Boek_lijst[0].Titel"></a>
-        <a href="/BoekDetails_1"><img src="@Model.Boek_lijst[1].Foto" alt="@Model.Boek_lijst[1].Titel"></a>
-        <a href=""><img src="@Model.Boek_lijst[2].Foto" alt="@Model.Boek_lijst[2].Titel"></a>
-        <a href=""><img src="@Model.Boek_lijst[3].Foto" alt="@Model.Boek_lijst[3].Titel"></a>
+        <img src="boek3.jpg" alt="Somehow, I Manage" width="300" height="443">
+        <div class="tekst_resultaat">
+            <h2>Somehow, I Manage - Michael Scott (Engels)</h2>
+            <p>Finally, Michael Scott has published his long-awaited management manuscript from the hit NBC television show, The Office. Somehow, I Manage is jam-packed with quotes of wisdom from the World's Best Boss, Michael Scott. From conflict resolution to the art of dating your boss, Somehow, I Manage is the culmination of decades worth of sage advice from his experiences in the business world. It's the perfect read for any The Office fan!</p>
+        </div>
     </div>
-    <h1>Nieuwe luisterboeken in de collectie 🎧</h1>
     <div class="book_zoek_resultaat">
-        <img src="Nieuwste_1.jpg" alt="De weg naar huis">
-        <img src="boek.jpg" alt="De weg naar huis">
-        <img src="boek3.jpg" alt="De weg naar huis">
-        <img src="boek4.jpg" alt="De weg naar huis">
+        <img src="boek4.jpg" alt="In Orbit" width="300" height="443">
+        <div class="tekst_resultaat">
+            <h2>In Orbit - Samantha Harvey</h2>
+            <p>
+                WINNAAR BOOKER PRIZE 2024
+                <br><br>Een team astronauten verzamelt in een internationaal ruimtestation meteorologische gegevens en voert er wetenschappelijke experimenten uit. Maar meestal observeren ze. Gezamenlijk kijken ze naar de stille blauwe planeet, ze cirkelen eromheen, draaien langs continenten en door de seizoenen, ze zien gletsjers en woestijnen, de toppen van bergen en de deining van oceanen.
+                <br><br>Hoewel ze van de wereld afgescheiden zijn, kunnen ze toch niet ontsnappen aan de constante aantrekkingskracht van de aarde. Ze ontvangen het nieuws dat de moeder van een van hen is overleden en daarmee komen de gedachten op over een terugkeer naar huis. Ze kijken toe hoe een tyfoon zich samenpakt boven de mensen van wie ze houden, en zijn vol ontzag en angst. De kwetsbaarheid van het menselijk leven vult hun gesprekken, hun angsten en hun dromen. Zo ver van de aarde hebben ze zich nog nooit zo’n onderdeel ervan gevoeld.
+            </p>
+        </div>
     </div>
-    <h1>Nieuwe e-books in de collectie 📱</h1>
-    <div class="book_zoek_resultaat">
-        <img src="Nieuwste_1.jpg" alt="De weg naar huis">
-        <img src="boek.jpg" alt="De weg naar huis">
-        <img src="boek3.jpg" alt="De weg naar huis">
-        <img src="boek4.jpg" alt="De weg naar huis">
-    </div>
+
 </body>
-
 </html>
-

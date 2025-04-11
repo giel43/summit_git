@@ -1,8 +1,7 @@
 ﻿@page
-@model IndexModel
+@model RazorApp.Pages.ProfielModel
 @{
 }
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -77,31 +76,19 @@
             </div>
 
         </div>
-
+        <div class="profiel_foto_groot">
+            <img src="Profiel.jpg">
+        </div>
+        <div class="profiel_pagina">
+            <form action="Home_pagina.html">
+                <div class="velden_invullen">
+                    <input type="text" placeholder="Naam" id="username" name="username"><br>
+                    <input type="password" placeholder="Wachtwoord" id="pwd" name="pwd">
+                </div>
+                <input type="submit" value="Submit" class="btn">
+            </form>
+            <button class="btn_ww_vergeten" href="wachtwoord_vergeten.html"><u>Wachtwoord vergeten</u></button>
+        </div>
     </nav>
-    </div>
-    <h1>Iets voor jouw?</h1>
-    <div class="book_zoek_resultaat">
-        <a href="/BoekDetails_0"><img src="@Model.Boek_lijst[0].Foto" alt="@Model.Boek_lijst[0].Titel"></a>
-        <a href="/BoekDetails_1"><img src="@Model.Boek_lijst[1].Foto" alt="@Model.Boek_lijst[1].Titel"></a>
-        <a href=""><img src="@Model.Boek_lijst[2].Foto" alt="@Model.Boek_lijst[2].Titel"></a>
-        <a href=""><img src="@Model.Boek_lijst[3].Foto" alt="@Model.Boek_lijst[3].Titel"></a>
-    </div>
-    <h1>Nieuwe luisterboeken in de collectie 🎧</h1>
-    <div class="book_zoek_resultaat">
-        <img src="Nieuwste_1.jpg" alt="De weg naar huis">
-        <img src="boek.jpg" alt="De weg naar huis">
-        <img src="boek3.jpg" alt="De weg naar huis">
-        <img src="boek4.jpg" alt="De weg naar huis">
-    </div>
-    <h1>Nieuwe e-books in de collectie 📱</h1>
-    <div class="book_zoek_resultaat">
-        <img src="Nieuwste_1.jpg" alt="De weg naar huis">
-        <img src="boek.jpg" alt="De weg naar huis">
-        <img src="boek3.jpg" alt="De weg naar huis">
-        <img src="boek4.jpg" alt="De weg naar huis">
-    </div>
 </body>
-
 </html>
-
