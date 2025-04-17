@@ -9,14 +9,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="/css/bieb.css">
-
 </head>
-
 
 <body>
     <div class="topnav">
         <div class="home-button">
-
             <a class="active" href="/Index"><i class="fa fa-home"></i></a>
         </div>
         <div class="search-container">
@@ -33,20 +30,17 @@
             </form>
         </div>
         <div class="hartje_image">
-            <button type="submit">
-                <a href="/Mijn_lijst">
-                    <img src="/images/hartje.jpg" alt="Lijstknop">
-                </a>
-            </button>
+            <a href="/Mijn_lijst">
+                <img src="/images/hartje.jpg" alt="Lijstknop">
+            </a>
         </div>
         <div class="profiel_image">
-            <button type="submit">
-                <a href="/Profiel">
-                    <img src="/images/Profiel.jpg" alt="Profielknop" />
-                </a>
-            </button>
+            <a href="/Profiel">
+                <img src="/images/Profiel.jpg" alt="Profielknop" />
+            </a>
         </div>
     </div>
+
     <nav>
         <div class="lijnen">
             <div class="dropdown">
@@ -73,35 +67,44 @@
             </div>
             <div class="contact">
                 <button class="btn_contact">Contact</button>
-
             </div>
-
         </div>
-
     </nav>
-    </div>
-    <h1>Iets voor jouw?</h1>
+
+    <h1>Iets voor jou?</h1>
     <div class="boeken_home_pagina">
-        <a href="/BoekDetails_0"><img src="@Model.Boek_lijst[0].Foto" alt="@Model.Boek_lijst[0].Titel"></a>
-        <a href="/BoekDetails_1"><img src="@Model.Boek_lijst[1].Foto" alt="@Model.Boek_lijst[1].Titel"></a>
-        <a href=""><img src="@Model.Boek_lijst[2].Foto" alt="@Model.Boek_lijst[2].Titel"></a>
-        <a href=""><img src="@Model.Boek_lijst[3].Foto" alt="@Model.Boek_lijst[3].Titel"></a>
+        @if (Model.Boek_lijst?.Count > 0)
+        {
+            <a href="/BoekDetails_0"><img src="@Model.Boek_lijst[0].Foto" alt="@Model.Boek_lijst[0].Titel"></a>
+        }
+        @if (Model.Boek_lijst?.Count > 1)
+        {
+            <a href="/BoekDetails_1"><img src="@Model.Boek_lijst[1].Foto" alt="@Model.Boek_lijst[1].Titel"></a>
+        }
+        @if (Model.Boek_lijst?.Count > 2)
+        {
+            <a href="/BoekDetails_2"><img src="@Model.Boek_lijst[2].Foto" alt="@Model.Boek_lijst[2].Titel"></a>
+        }
+        @if (Model.Boek_lijst?.Count > 3)
+        {
+            <a href="/BoekDetails_3"><img src="@Model.Boek_lijst[3].Foto" alt="@Model.Boek_lijst[3].Titel"></a>
+        }
     </div>
+
     <h1>Nieuwe luisterboeken in de collectie 🎧</h1>
     <div class="boeken_home_pagina">
-        <img src="Nieuwste_1.jpg" alt="De weg naar huis">
-        <img src="boek.jpg" alt="De weg naar huis">
-        <img src="boek3.jpg" alt="De weg naar huis">
-        <img src="boek4.jpg" alt="De weg naar huis">
+        <img src="/images/Nieuwste_1.jpg" alt="De weg naar huis">
+        <img src="/images/boek.jpg" alt="De weg naar huis">
+        <img src="/images/boek3.jpg" alt="De weg naar huis">
+        <img src="/images/boek4.jpg" alt="De weg naar huis">
     </div>
+
     <h1>Nieuwe e-books in de collectie 📱</h1>
     <div class="boeken_home_pagina">
-        <img src="Nieuwste_1.jpg" alt="De weg naar huis">
-        <img src="boek.jpg" alt="De weg naar huis">
-        <img src="boek3.jpg" alt="De weg naar huis">
-        <img src="boek4.jpg" alt="De weg naar huis">
+        <img src="/images/Nieuwste_1.jpg" alt="De weg naar huis">
+        <img src="/images/boek.jpg" alt="De weg naar huis">
+        <img src="/images/boek3.jpg" alt="De weg naar huis">
+        <img src="/images/boek4.jpg" alt="De weg naar huis">
     </div>
 </body>
-
 </html>
-

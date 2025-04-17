@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Data.SqlClient;
+using RazorApp.Models;
+using System.Collections.Generic;
 
 namespace RazorApp.Pages
 {
@@ -13,84 +15,103 @@ namespace RazorApp.Pages
             _logger = logger;
         }
 
+        private static string connectionString = "Data Source=LAPTOP-MV01S0AU;Initial Catalog=master;Integrated Security=True;Trust Server Certificate=True;";
 
-        public class Boek
+        public List<Boek> Boek_lijst { get; set; } = new List<Boek>();
+
+        public void OnGet()
         {
-            public long ISBN { get; set; }
-            public string Titel { get; set; }
-            public string Score { get; set; }
-            public string Lees_niveau { get; set; }
-            public string Type { get; set; }
-            public string Taal { get; set; }
-            public string Jaar_van_uitgave { get; set; }
-            public string Uitgeverij { get; set; }
-            public int Aantal_beschikbaar { get; set; }
-            public string Foto { get; set; }
-            public string Inhoud_boek { get; set; }
-            public Boek(string isbnStr, string Titel, string Score, string Lees_niveau, string Type, string Taal, string Jaar_van_uitgave, string Uitgeverij, int Aantal_beschikbaar, string Foto, string Inhoud_boek)
-            {
-                long isbnValue = 0;
-                long.TryParse(isbnStr.Trim(), out isbnValue); // Probeer de string naar long om te zetten
-                this.ISBN = isbnValue;
-                this.Titel = Titel;
-                this.Score = Score;
-                this.Lees_niveau = Lees_niveau;
-                this.Type = Type;
-                this.Taal = Taal;
-                this.Jaar_van_uitgave = Jaar_van_uitgave;
-                this.Uitgeverij = Uitgeverij;
-                this.Aantal_beschikbaar = Aantal_beschikbaar;
-                this.Foto = Foto;
-                this.Inhoud_boek = Inhoud_boek;
-            }
+            Boek_lijst = GetAllBoeken();
         }
-        public List<Boek> Boek_lijst = new List<Boek>();
 
-        public void VulBoeken()
+        public static List<Boek> GetAllBoeken()
         {
-            string _connectionString = "Data Source=LAPTOP-MV01S0AU;Initial Catalog=BibliotheekDB;Integrated Security=True;Encrypt=True;Trust Server Certificate=True";
+            List<Boek> boeken = new List<Boek>();
 
-            using (SqlConnection connection = new SqlConnection(_connectionString))
+            using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 connection.Open();
-                string query = "SELECT * FROM BOEKEN";
-                using (SqlCommand command = new SqlCommand(query, connection))
+
+                string boekQuery = "SELECT [Boek_ID], [Titel], [Aantal], [ISBN], [Foto], [Beschrijving] FROM [dbo].[Boek_ID's]";
+
+                using (SqlCommand command = new SqlCommand(boekQuery, connection))
                 using (SqlDataReader reader = command.ExecuteReader())
                 {
-                    if (!reader.HasRows)
-                    {
-                        _logger.LogWarning("Geen boeken gevonden in de database.");
-                        return;
-                    }
-
                     while (reader.Read())
                     {
-                        string isbnStr = reader.IsDBNull(0) ? "0" : reader.GetString(0).Trim();
+                        boeken.Add(new Boek(
+                            reader.IsDBNull(0) ? 0 : reader.GetInt32(0),     // BoekID
+                            reader.IsDBNull(1) ? string.Empty : reader.GetString(1), // Titel
+                            reader.IsDBNull(2) ? 0 : reader.GetInt32(2),      // Aantal
+                            reader.IsDBNull(3) ? string.Empty : reader.GetString(3), // ISBN
+                            reader.IsDBNull(4) ? string.Empty : reader.GetString(4), // Foto
+                            reader.IsDBNull(5) ? string.Empty : reader.GetString(5)  // Beschrijving
+                        ));
+                    }
+                }
 
-                        Boek_lijst.Add(new Boek(
-                            isbnStr,
-                            reader.IsDBNull(1) ? "Onbekend" : reader.GetString(1),
-                            reader.IsDBNull(2) ? "0" : reader.GetValue(2).ToString(),
-                            reader.IsDBNull(3) ? "Onbekend" : reader.GetString(3),
-                            reader.IsDBNull(4) ? "Onbekend" : reader.GetString(4),
-                            reader.IsDBNull(5) ? "Onbekend" : reader.GetString(5),
-                            reader.IsDBNull(6) ? "0" : reader.GetValue(6).ToString(),
-                            reader.IsDBNull(7) ? "Onbekend" : reader.GetString(7),
-                            reader.IsDBNull(8) ? 0 : reader.GetInt32(8),
-                            reader.IsDBNull(9) ? "Geen foto" : reader.GetString(9),
-                            reader.IsDBNull(10) ? "Geen inhoud" : reader.GetString(10)
+                // Get authors for each book
+                foreach (var boek in boeken)
+                {
+                    boek.Auteurs = GetAuteurs(connection, boek.BoekID);
+                    boek.Genres = GetGenres(connection, boek.BoekID);
+                }
+            }
+
+            return boeken;
+        }
+
+        public static List<Auteur> GetAuteurs(SqlConnection connection, int boekID)
+        {
+            List<Auteur> auteurs = new List<Auteur>();
+            string sql = @"
+                SELECT a.[Auteur_ID], a.[Auteurs] 
+                FROM [dbo].[Auteurs_ID's] a
+                JOIN [dbo].[Boek_Auteurs_ID's] ba ON a.[Auteur_ID] = ba.[Auteur_ID]
+                WHERE ba.[Boek_ID] = @boekID";
+
+            using (SqlCommand command = new SqlCommand(sql, connection))
+            {
+                command.Parameters.AddWithValue("@boekID", boekID);
+
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        auteurs.Add(new Auteur(
+                            reader.IsDBNull(0) ? 0 : reader.GetInt32(0),     // AuteurID
+                            reader.IsDBNull(1) ? string.Empty : reader.GetString(1)  // Naam
                         ));
                     }
                 }
             }
+            return auteurs;
         }
-            public void OnGet()
+        public static List<Genre> GetGenres(SqlConnection connection, int boekID)
         {
-            VulBoeken();
-        }
+            List<Genre> genres = new List<Genre>();
+            string sql = @"
+        SELECT g.[Genre_ID], g.[Genres] 
+        FROM [dbo].[Genres_ID's] g
+        JOIN [dbo].[Boek_genres_ID's] bg ON g.[Genre_ID] = bg.[Genre_ID]
+        WHERE bg.[Boek_ID] = @boekID";
 
+            using (SqlCommand command = new SqlCommand(sql, connection))
+            {
+                command.Parameters.AddWithValue("@boekID", boekID);
+
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        genres.Add(new Genre(
+                            reader.IsDBNull(0) ? 0 : reader.GetInt32(0),     // GenreID
+                            reader.IsDBNull(1) ? string.Empty : reader.GetString(1)  // GenreNaam
+                        ));
+                    }
+                }
+            }
+            return genres;
+        }
     }
 }
-
-
-        

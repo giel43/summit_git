@@ -1,5 +1,5 @@
 ﻿@page
-@model RazorApp.Pages.IndexModel
+@model IndexModel
 @{
 }
 
@@ -9,14 +9,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="/css/bieb.css">
-
 </head>
-
 
 <body>
     <div class="topnav">
         <div class="home-button">
-
             <a class="active" href="/Index"><i class="fa fa-home"></i></a>
         </div>
         <div class="search-container">
@@ -33,20 +30,17 @@
             </form>
         </div>
         <div class="hartje_image">
-            <button type="submit">
-                <a href="/Mijn_lijst">
-                    <img src="/images/hartje.jpg" alt="Lijstknop">
-                </a>
-            </button>
+            <a href="/Mijn_lijst">
+                <img src="/images/hartje.jpg" alt="Lijstknop">
+            </a>
         </div>
         <div class="profiel_image">
-            <button type="submit">
-                <a href="/Profiel">
-                    <img src="/images/Profiel.jpg" alt="Profielknop" />
-                </a>
-            </button>
+            <a href="/Profiel">
+                <img src="/images/Profiel.jpg" alt="Profielknop">
+            </a>
         </div>
     </div>
+
     <nav>
         <div class="lijnen">
             <div class="dropdown">
@@ -73,30 +67,43 @@
             </div>
             <div class="contact">
                 <button class="btn_contact">Contact</button>
-
             </div>
-
         </div>
-
     </nav>
-    </div>
-    <div class="book-container">
-        <img src="@Model.Boek_lijst[1].Foto" alt="@Model.Boek_lijst[1].Titel" width="300" height="443">
-        <div class="book-text">
-            <h2>@Model.Boek_lijst[1].Titel</h2>
-            <p>
-                @Model.Boek_lijst[1].Inhoud_boek
-            </p>
+
+    @if (Model.Boek_lijst?.Count > 0)
+    {
+        <div class="book-container">
+            <img src="@Model.Boek_lijst[1].Foto"
+                 alt="@Model.Boek_lijst[1].Titel"
+                 width="300"
+                 height="443"
+                 onerror="this.src='/images/placeholder.jpg'">
+            <div class="book-text">
+                <h2>@Model.Boek_lijst[1].Titel - @Model.Boek_lijst[1].Auteurs[0].Auteurs</h2>
+                <p>
+                    @Model.Boek_lijst[1].Beschrijving
+                </p>
+            </div>
+            @if (Model.Boek_lijst[1].Auteurs?.Count > 1)
+            {
+                <p>Medeauteurs:</p>
+                foreach (var auteurs in @Model.Boek_lijst[1].Auteurs)
+                {
+                    <p>@auteurs.Auteurs</p>
+                }
+            }
         </div>
-    </div>
-    <div class="reserveer-button">
-        <a href="/reserveren">
-            <button>Reserveer</button>
-        </a>
-    </div>
 
-
-
+        <div class="reserveer-button">
+            <a href="/reserveren" class="btn-reserveer">Reserveer</a>
+        </div>
+    }
+    else
+    {
+        <div class="no-books">
+            <p>Geen boeken beschikbaar</p>
+        </div>
+    }
 </body>
-
 </html>
