@@ -94,6 +94,16 @@
                 }
             }
         </div>
+        <div class="book-info">
+            @if (Model.Boek_lijst[0].Genres?.Count > 0)
+            {
+                <p>Genres:</p>
+                foreach (var genres in @Model.Boek_lijst[0].Genres)
+                {
+                    <p>@genres.Genres</p>
+                }
+            }
+        </div>
         
         <div class="reserveer-button">
             <a href="/reserveren" class="btn-reserveer">Reserveer</a>
