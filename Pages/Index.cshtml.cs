@@ -15,7 +15,7 @@ namespace RazorApp.Pages
             _logger = logger;
         }
 
-        private static string connectionString = "Data Source=LAPTOP-MV01S0AU;Initial Catalog=master;Integrated Security=True;Trust Server Certificate=True;";
+        private static string connectionString = "Data Source=LAPTOP-MV01S0AU;Initial Catalog=BibliotheekDB;Integrated Security=True;Trust Server Certificate=True;";
 
         public List<Boek> Boek_lijst { get; set; } = new List<Boek>();
 
