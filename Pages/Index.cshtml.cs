@@ -55,6 +55,7 @@ namespace RazorApp.Pages
                 {
                     boek.Auteurs = GetAuteurs(connection, boek.BoekID);
                     boek.Genres = GetGenres(connection, boek.BoekID);
+                    boek.Themas = GetThemas(connection, boek.BoekID);
                 }
             }
 
@@ -112,6 +113,33 @@ namespace RazorApp.Pages
                 }
             }
             return genres;
+        }
+        public static List<Thema> GetThemas(SqlConnection connection, int boekID)
+        {
+            List<Thema> themas = new List<Thema>();
+            string sql = @"
+                SELECT t.[Thema_ID], t.[Themas] 
+                FROM [dbo].[Thema_ID's] t
+                JOIN [dbo].[Boeken_Informatie_ID's] bi ON t.[Thema_ID] = bi.[Thema_ID]
+                JOIN [dbo].[Boeken_info_SamenV_ID's] bs ON bi.[Boek_Info_ID] = bs.[Boeken_info_samenV_ID]
+                WHERE bs.[Boek_ID] = @boekID";
+
+            using (SqlCommand command = new SqlCommand(sql, connection))
+            {
+                command.Parameters.AddWithValue("@boekID", boekID);
+
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        themas.Add(new Thema(
+                            reader.IsDBNull(0) ? 0 : reader.GetInt32(0),
+                            reader.IsDBNull(1) ? string.Empty : reader.GetString(1)
+                        ));
+                    }
+                }
+            }
+            return themas;
         }
     }
 }

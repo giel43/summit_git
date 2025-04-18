@@ -1,5 +1,5 @@
 ﻿@page
-@model RazorApp.Pages.Zoek_resultaatModel
+@model IndexModel
 @{
 }
 <!DOCTYPE html>
@@ -80,41 +80,34 @@
     </nav>
     </div>
     <h1>Zoekresultaten:</h1>
+
+   
     <div class="book_zoek_resultaat">
-        <a href="Boek_selecteer.html"><img src="Nieuwste_1.jpg" alt="De weg naar huis" width="300" height="443"></a>
+        <a href="/BoekDetails_0"><img src="@Model.Boek_lijst[0].Foto" alt="@Model.Boek_lijst[0].Titel" width="300" height="443"></a>
         <div class="tekst_resultaat">
-            <h2>De weg naar huis - Kristin Hannah</h2>
+            <h2>@Model.Boek_lijst[0].Titel - @Model.Boek_lijst[0].Auteurs[0].Auteurs</h2>
             <p>
-                Van de bestsellerauteur van Aan het einde van de wereld, Als de wolven huilen en De vergeten vrouwen
-
-                ‘Hartverwarmend maar soms ook rauw verhaal verteld vanuit verschillende perspectieven.' TrosKompas
-
-                Net op het moment dat haar huwelijk op de klippen dreigt te lopen krijgt Jolene, een helikopterpiloot bij de Nationale Garde van het Amerikaanse leger, bericht dat ze uitgezonden wordt. Ze moet haar twee dochters en onder spanning staande huwelijk achterlaten en vertrekt voor een jaar naar Irak.
-
-                Haar man Michael, die al weinig begrip had voor Jolenes toewijding aan het leger, blijft achter en moet als drukbezette advocaat de zorg dragen voor de kinderen. Een zaak waarbij hij een ex-militair met PTSS moet verdedigen zorgt langzaam voor meer begrip bij Michael en hij ziet in dat hij zijn rol als echtgenoot en vader lange tijd heeft verwaarloosd.
-
-                Wanneer Jolenes helikopter neerstort tijdens een missie keert ze eerder dan gepland terug bij haar gezin. Ze moet haar draai weer vinden in het gezinsleven terwijl ze probeert te herstellen van wat ze heeft meegemaakt. Lukt het Michael om Jolenes vertrouwen terug te winnen en haar te helpen met het verwerken van de gebeurtenissen in Irak?
+                @Model.Boek_lijst[0].Beschrijving
             </p>
         </div>
     </div>
     <div class="book_zoek_resultaat">
-        <img src="boek3.jpg" alt="Somehow, I Manage" width="300" height="443">
+        <a href="/BoekDetails_1"><img src="@Model.Boek_lijst[1].Foto" alt="@Model.Boek_lijst[1].Titel" width="300" height="443"></a>
         <div class="tekst_resultaat">
-            <h2>Somehow, I Manage - Michael Scott (Engels)</h2>
-            <p>Finally, Michael Scott has published his long-awaited management manuscript from the hit NBC television show, The Office. Somehow, I Manage is jam-packed with quotes of wisdom from the World's Best Boss, Michael Scott. From conflict resolution to the art of dating your boss, Somehow, I Manage is the culmination of decades worth of sage advice from his experiences in the business world. It's the perfect read for any The Office fan!</p>
-        </div>
-    </div>
-    <div class="book_zoek_resultaat">
-        <img src="boek4.jpg" alt="In Orbit" width="300" height="443">
-        <div class="tekst_resultaat">
-            <h2>In Orbit - Samantha Harvey</h2>
+            <h2>@Model.Boek_lijst[1].Titel - @Model.Boek_lijst[1].Auteurs[0].Auteurs</h2>
             <p>
-                WINNAAR BOOKER PRIZE 2024
-                <br><br>Een team astronauten verzamelt in een internationaal ruimtestation meteorologische gegevens en voert er wetenschappelijke experimenten uit. Maar meestal observeren ze. Gezamenlijk kijken ze naar de stille blauwe planeet, ze cirkelen eromheen, draaien langs continenten en door de seizoenen, ze zien gletsjers en woestijnen, de toppen van bergen en de deining van oceanen.
-                <br><br>Hoewel ze van de wereld afgescheiden zijn, kunnen ze toch niet ontsnappen aan de constante aantrekkingskracht van de aarde. Ze ontvangen het nieuws dat de moeder van een van hen is overleden en daarmee komen de gedachten op over een terugkeer naar huis. Ze kijken toe hoe een tyfoon zich samenpakt boven de mensen van wie ze houden, en zijn vol ontzag en angst. De kwetsbaarheid van het menselijk leven vult hun gesprekken, hun angsten en hun dromen. Zo ver van de aarde hebben ze zich nog nooit zo’n onderdeel ervan gevoeld.
+                @Model.Boek_lijst[1].Beschrijving
             </p>
         </div>
     </div>
-
+    <div class="book_zoek_resultaat">
+        <a href="/BoekDetails_2"><img src="@Model.Boek_lijst[2].Foto" alt="@Model.Boek_lijst[2].Titel" width="300" height="443"></a>
+        <div class="tekst_resultaat">
+            <h2>@Model.Boek_lijst[2].Titel - @Model.Boek_lijst[2].Auteurs[0].Auteurs</h2>
+            <p>
+                @Model.Boek_lijst[2].Beschrijving
+            </p>
+        </div>
+    </div>
 </body>
 </html>
