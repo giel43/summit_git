@@ -1,5 +1,5 @@
 ﻿@page
-@model RazorApp.Pages.Mijn_lijstModel
+@model IndexModel
 @{
 }
 <!DOCTYPE html>
@@ -81,23 +81,23 @@
     </div>
     <div style="margin-left: 18%;"><h1>❤️ Mijn Lijst</h1></div>
     <div class="book_zoek_resultaat">
-        <img src="boek3.jpg" alt="Somehow, I Manage" width="300" height="443">
-        <div class="tekst_resultaat">
-            <h2>Somehow, I Manage - Michael Scott (Engels)</h2>
-            <p>Finally, Michael Scott has published his long-awaited management manuscript from the hit NBC television show, The Office. Somehow, I Manage is jam-packed with quotes of wisdom from the World's Best Boss, Michael Scott. From conflict resolution to the art of dating your boss, Somehow, I Manage is the culmination of decades worth of sage advice from his experiences in the business world. It's the perfect read for any The Office fan!</p>
-        </div>
+    <a href="/BoekDetails_1"><img src="@Model.Boek_lijst[1].Foto" alt="@Model.Boek_lijst[1].Titel" width="300" height="443"></a>
+    <div class="tekst_resultaat">
+        <h2>@Model.Boek_lijst[1].Titel - @Model.Boek_lijst[1].Auteurs[0].Auteurs</h2>
+        <p>
+            @Model.Boek_lijst[1].Beschrijving
+        </p>
     </div>
-    <div class="book_zoek_resultaat">
-        <img src="boek4.jpg" alt="In Orbit" width="300" height="443">
-        <div class="tekst_resultaat">
-            <h2>In Orbit - Samantha Harvey</h2>
-            <p>
-                WINNAAR BOOKER PRIZE 2024
-                <br><br>Een team astronauten verzamelt in een internationaal ruimtestation meteorologische gegevens en voert er wetenschappelijke experimenten uit. Maar meestal observeren ze. Gezamenlijk kijken ze naar de stille blauwe planeet, ze cirkelen eromheen, draaien langs continenten en door de seizoenen, ze zien gletsjers en woestijnen, de toppen van bergen en de deining van oceanen.
-                <br><br>Hoewel ze van de wereld afgescheiden zijn, kunnen ze toch niet ontsnappen aan de constante aantrekkingskracht van de aarde. Ze ontvangen het nieuws dat de moeder van een van hen is overleden en daarmee komen de gedachten op over een terugkeer naar huis. Ze kijken toe hoe een tyfoon zich samenpakt boven de mensen van wie ze houden, en zijn vol ontzag en angst. De kwetsbaarheid van het menselijk leven vult hun gesprekken, hun angsten en hun dromen. Zo ver van de aarde hebben ze zich nog nooit zo’n onderdeel ervan gevoeld.
-            </p>
-        </div>
+</div>
+<div class="book_zoek_resultaat">
+    <a href="/BoekDetails_2"><img src="@Model.Boek_lijst[2].Foto" alt="@Model.Boek_lijst[2].Titel" width="300" height="443"></a>
+    <div class="tekst_resultaat">
+        <h2>@Model.Boek_lijst[2].Titel - @Model.Boek_lijst[2].Auteurs[0].Auteurs</h2>
+        <p>
+            @Model.Boek_lijst[2].Beschrijving
+        </p>
     </div>
+</div>
 
 </body>
 </html>

@@ -81,7 +81,7 @@
     </div>
     <h1>Zoekresultaten:</h1>
 
-   
+
     <div class="book_zoek_resultaat">
         <a href="/BoekDetails_0"><img src="@Model.Boek_lijst[0].Foto" alt="@Model.Boek_lijst[0].Titel" width="300" height="443"></a>
         <div class="tekst_resultaat">
@@ -109,5 +109,29 @@
             </p>
         </div>
     </div>
+    <div class="book_zoek_resultaat">
+        <a href="/BoekDetails_3"><img src="@Model.Boek_lijst[3].Foto" alt="@Model.Boek_lijst[3].Titel" width="300" height="443"></a>
+        <div class="tekst_resultaat">
+            <h2>@Model.Boek_lijst[3].Titel - @Model.Boek_lijst[3].Auteurs[0].Auteurs</h2>
+            <p>
+                @Model.Boek_lijst[3].Beschrijving
+            </p>
+        </div>
+    </div>
+    @if (Model.Boek_lijst?.Count > 4)
+    {
+        @foreach (var boek in Model.Boek_lijst)
+        {
+            <div class="book_zoek_resultaat">
+                <a href="/BoekDetails_3"><img src="@boek.Foto" alt="@boek.Titel" width="300" height="443"></a>
+            <div class="tekst_resultaat">
+                <h2>@boek.Titel - @boek.Auteurs[0].Auteurs</h2>
+                <p>
+                    @boek.Beschrijving
+                </p>
+            </div>
+        </div>
+        }
+    }
 </body>
 </html>

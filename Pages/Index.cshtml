@@ -93,18 +93,42 @@
 
     <h1>Nieuwe luisterboeken in de collectie 🎧</h1>
     <div class="boeken_home_pagina">
-        <img src="/images/Nieuwste_1.jpg" alt="foto boek 5">
-        <img src="/images/boek.jpg" alt="foto boek 6">
-        <img src="/images/boek3.jpg" alt="foto boek 7">
-        <img src="/images/boek4.jpg" alt="foto boek 8">
+        @if (Model.Boek_lijst?.Count > 4)
+        {
+            <a href="/BoekDetails_0"><img src="@Model.Boek_lijst[4].Foto" alt="@Model.Boek_lijst[4].Titel"></a>
+        }
+        @if (Model.Boek_lijst?.Count > 5)
+        {
+            <a href="/BoekDetails_1"><img src="@Model.Boek_lijst[5].Foto" alt="@Model.Boek_lijst[5].Titel"></a>
+        }
+        @if (Model.Boek_lijst?.Count > 6)
+        {
+            <a href="/BoekDetails_2"><img src="@Model.Boek_lijst[6].Foto" alt="@Model.Boek_lijst[6].Titel"></a>
+        }
+        @if (Model.Boek_lijst?.Count > 7)
+        {
+            <a href="/BoekDetails_3"><img src="@Model.Boek_lijst[7].Foto" alt="@Model.Boek_lijst[7].Titel"></a>
+        }
     </div>
 
     <h1>Nieuwe e-books in de collectie 📱</h1>
     <div class="boeken_home_pagina">
-        <img src="/images/Nieuwste_1.jpg" alt="foto boek 9">
-        <img src="/images/boek.jpg" alt="foto boek 10">
-        <img src="/images/boek3.jpg" alt="foto boek 11">
-        <img src="/images/boek4.jpg" alt="foto boek 12">
+        @if (Model.Boek_lijst?.Count > 8)
+        {
+            <a href="/BoekDetails_0"><img src="@Model.Boek_lijst[8].Foto" alt="@Model.Boek_lijst[8].Titel"></a>
+        }
+        @if (Model.Boek_lijst?.Count > 9)
+        {
+            <a href="/BoekDetails_1"><img src="@Model.Boek_lijst[9].Foto" alt="@Model.Boek_lijst[9].Titel"></a>
+        }
+        @if (Model.Boek_lijst?.Count > 10)
+        {
+            <a href="/BoekDetails_2"><img src="@Model.Boek_lijst[10].Foto" alt="@Model.Boek_lijst[10].Titel"></a>
+        }
+        @if (Model.Boek_lijst?.Count > 11)
+        {
+            <a href="/BoekDetails_3"><img src="@Model.Boek_lijst[11].Foto" alt="@Model.Boek_lijst[11].Titel"></a>
+        }
     </div>
 </body>
 </html>
