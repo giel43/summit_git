@@ -11,7 +11,7 @@ html, body {
     gap: 30px;
     max-width: 1000px;
     margin: 30px auto;
-    padding: 0 20px;  
+    padding: 0 20px;
 }
 
 
@@ -40,7 +40,7 @@ h1 {
 }
 
 
-.topnav .home-button a{
+.topnav .home-button a {
     float: left;
     color: rgb(0, 0, 0);
     font-size: 30px;
@@ -48,46 +48,47 @@ h1 {
     margin-left: 1%;
 }
 
-    .topnav .search-container {
-        width: 100%;
-        margin-left: 28%;
-        justify-content: center;
-        font-size: 26px;
-    }
-    .search-container input {
-        position: relative;
-        padding: 10px;
-        font-size: 16px;
-        width: 600px;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-    }
+.topnav .search-container {
+    width: 100%;
+    margin-left: 28%;
+    justify-content: center;
+    font-size: 26px;
+}
 
-    .search-container button {
-        font-size: 20px;
-        border-color: rgb(255, 255, 255);
-    }
+.search-container input {
+    position: relative;
+    padding: 10px;
+    font-size: 16px;
+    width: 600px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
 
-    .aanbevolen {
-        margin-left: 120px;
-        font-size: 25px;
-    }
-    
+.search-container button {
+    font-size: 20px;
+    border-color: rgb(255, 255, 255);
+}
+
+.aanbevolen {
+    margin-left: 120px;
+    font-size: 25px;
+}
+
 
 .dropdown1 {
-  position: absolute;
-  left: 57.5%;
-  display: inline-block;
-  
+    position: absolute;
+    left: 57.5%;
+    display: inline-block;
 }
+
 .dropbtn {
     background: none;
-  border: none;
-  color: rgb(0, 0, 0);
-  padding: 0;
-  font-size: 16px;
-  cursor: pointer;
-  outline: none;
+    border: none;
+    color: rgb(0, 0, 0);
+    padding: 0;
+    font-size: 16px;
+    cursor: pointer;
+    outline: none;
 }
 
 .dropdown {
@@ -107,87 +108,98 @@ h1 {
     z-index: 1;
 }
 
-.dropdown-content a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-}
+    .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+    }
 
-.dropdown-content a:hover {background-color: #f1f1f1}
+        .dropdown-content a:hover {
+            background-color: #f1f1f1
+        }
 
 .dropdown:hover .dropdown-content {
-  display: block;
+    display: block;
 }
 
 .dropdown:hover .dropbtn {
-  background-color: hsl(0, 0%, 100%);
+    background-color: hsl(0, 0%, 100%);
 }
+
 .lijnen {
     width: 100%;
     height: 20px;
     padding: 10px;
     border-top: 1px solid rgb(0, 0, 0);
-    border-bottom: 1px solid rgb(0, 0, 0);;
+    border-bottom: 1px solid rgb(0, 0, 0);
+    ;
     margin: 0;
 }
-.contact {
 
+.contact {
     float: right;
     margin-right: 3%;
 }
-.btn_contact
-{
-    background: none;
-  border: none;
-  color: rgb(0, 0, 0);
-  padding: 0;
-  font-size: 16px;
-  cursor: pointer;
-  outline: none;
 
+.btn_contact {
+    background: none;
+    border: none;
+    color: rgb(0, 0, 0);
+    padding: 0;
+    font-size: 16px;
+    cursor: pointer;
+    outline: none;
 }
+
 .profiel_image {
     position: absolute;
     top: 0px;
     right: 10px;
 }
-.profiel_image button {
-    background: none;
-    border: none;
-    padding: 0;
-    cursor: pointer;
-}
-.profiel_image img{
-    width: 36px;
-    height: 36px;
-    clip-path: circle(50%);
-}
+
+    .profiel_image button {
+        background: none;
+        border: none;
+        padding: 0;
+        cursor: pointer;
+    }
+
+    .profiel_image img {
+        width: 36px;
+        height: 36px;
+        clip-path: circle(50%);
+    }
+
 .hartje_image {
     position: absolute;
     top: 3px;
     right: 55px;
 }
-.hartje_image button {
-    background: none;
-    border: none;
-    padding: 0;
-    cursor: pointer;
-}
-.hartje_image img{
-    width: 30px;
-    height: 30px;
-}
+
+    .hartje_image button {
+        background: none;
+        border: none;
+        padding: 0;
+        cursor: pointer;
+    }
+
+    .hartje_image img {
+        width: 30px;
+        height: 30px;
+    }
+
 .boeken_home_pagina {
     margin: 30px 30%;
     display: flex;
     gap: 20px;
     align-items: flex-start;
 }
-.boeken_home_pagina img{
-    width: 120px;
-    height: 180px;
-}
+
+    .boeken_home_pagina img {
+        width: 120px;
+        height: 180px;
+    }
 
 .book_zoek_resultaat {
     border-bottom: 0.666667px solid rgb(217, 217, 217);
@@ -197,13 +209,15 @@ h1 {
     gap: 20px;
     align-items: flex-start;
 }
-.book_zoek_resultaat .tekst_resultaat {
-    max-width: 300px;
-}
-.book_zoek_resultaat img{
-    width: 120px;
-    height: 180px;
-}
+
+    .book_zoek_resultaat .tekst_resultaat {
+        max-width: 300px;
+    }
+
+    .book_zoek_resultaat img {
+        width: 120px;
+        height: 180px;
+    }
 
 .tekst_resultaat p {
     line-height: 1.5em;
@@ -212,90 +226,100 @@ h1 {
     text-overflow: ellipsis;
     display: block;
 }
+
 .profiel_pagina {
     width: 100%;
     margin-left: 25%;
     margin-top: 3%;
     font-size: 26px;
+}
+
+    .profiel_pagina input {
+        position: relative;
+        margin-left: 4%;
+        padding: 10px;
+        font-size: 16px;
+        width: 600px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
     }
 
-.profiel_pagina input {
-    position: relative;
-    margin-left: 4%;
-    padding: 10px;
-    font-size: 16px;
-    width: 600px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-.profiel_pagina .btn{
+    .profiel_pagina .btn {
+        position: relative;
+        padding: 5px;
+        margin-left: 20%;
+        font-size: 12px;
+        width: 100px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
 
-    position: relative;
-    padding: 5px;
-    margin-left: 20%;
-    font-size: 12px;
-    width: 100px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-
-}
 .profiel_foto_groot {
     margin-left: 43%;
     margin-top: 5%;
+}
 
-}
-.profiel_foto_groot img{
-    width: 160px;
-    height: 160px;
-    clip-path: circle(50%);
-}
+    .profiel_foto_groot img {
+        width: 160px;
+        height: 160px;
+        clip-path: circle(50%);
+    }
+
 .btn_ww_vergeten {
     background: none;
-  border: none;
-  color: rgb(0, 0, 0);
-  padding: 0;
-  margin-left: 19.4%;
-  font-size: 12px;
-  cursor: pointer;
-  outline: none;
-
+    border: none;
+    color: rgb(0, 0, 0);
+    padding: 0;
+    margin-left: 19.4%;
+    font-size: 12px;
+    cursor: pointer;
+    outline: none;
 }
+
 .reserveer-button {
     display: flex;
     justify-content: center;
-    position:absolute;
+    position: absolute;
     top: 95%;
     right: 20%;
 }
 
-.reserveer-button button {
-    background-color: #ff4500;
-    color: white;
-    font-size: 18px;
-    padding: 12px 24px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background 0.3s;
+    .reserveer-button button {
+        background-color: #ff4500;
+        color: white;
+        font-size: 18px;
+        padding: 12px 24px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background 0.3s;
+    }
+
+        .reserveer-button button:hover {
+            background-color: #cc3700;
+        }
+
+.hartje_image {
+    position: absolute;
+    top: 3px;
+    right: 55px;
 }
 
-.reserveer-button button:hover {
-    background-color: #cc3700;
-}
-.hartje_image {
-position: absolute;
-top: 3px;
-right: 55px;
-}
-.boek_image img{
+.boek_image img {
     width: 120px;
     height: 180px;
 }
-.tekst_contact {
 
+.tekst_contact {
     margin-left: 5%;
 }
-.icons_socials a{
+
+.icons_socials a {
     margin-left: 4%;
     gap: 10px;
+}
+.boek-info {
+    background: #f5f5f5;
+    padding: 10px;
+    margin-bottom: 15px;
 }

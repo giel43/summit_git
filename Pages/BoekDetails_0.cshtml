@@ -85,28 +85,38 @@
                     @Model.Boek_lijst[0].Beschrijving
                 </p>
             </div>
-            @if (Model.Boek_lijst[0].Auteurs?.Count > 1)
-            {
-                <p>Medeauteurs:</p>
-                foreach (var auteurs in @Model.Boek_lijst[0].Auteurs)
-                {
-                    <p>@auteurs.Auteurs</p>
-                }
-            }
         </div>
-        <div class="book-info">
-            @if (Model.Boek_lijst[0].Genres?.Count > 0)
-            {
-                <p>Genres:</p>
-                foreach (var genres in @Model.Boek_lijst[0].Genres)
+        <div class="boek-info">
+    <h2>Boek info:</h2>
+        @if (Model.Boek_lijst[0].Auteurs?.Count > 1)
+        {
+            <p><strong>Medeauteurs:</strong></p>
+            <ul>
+                @foreach (var auteur in Model.Boek_lijst[0].Auteurs)
                 {
-                    <p>@genres.Genres</p>
+                    <li>@auteur.Auteurs</li>
                 }
-            }
-        </div>
+            </ul>
+        }
         
+        @if (Model.Boek_lijst[0].Genres?.Count > 0)
+        {
+            <p><strong>Genres:</strong></p>
+            <ul>
+                @foreach (var genre in Model.Boek_lijst[0].Genres)
+                {
+                    <li>@genre.Genres</li>
+                }
+            </ul>
+        }
+        
+        <p><strong>ISBN:</strong> @Model.Boek_lijst[0].ISBN</p>
+        <p><strong>Aantal beschikbaar:</strong> @Model.Boek_lijst[0].Aantal</p>
+    </div>
         <div class="reserveer-button">
-            <a href="/reserveren" class="btn-reserveer">Reserveer</a>
+            <a href="/reserveren">
+                <button>Reserveer</button>
+            </a>
         </div>
     }
     else
